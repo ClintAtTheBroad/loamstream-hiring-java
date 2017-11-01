@@ -40,22 +40,22 @@ public final class PlannerTest {
 
 	@Test
 	public void testStarwarsAlphabetical() {
-		doTest(new Planner.Default(), Keyboard.Alphabetical, "star");
+		doTest(new Planner.Default(), Keyboard.Alphabetical, "starwars");
 	}
 
 	@Test
 	public void testStarwarsQwerty() {
-		doTest(new Planner.Default(), Keyboard.Qwerty, "star");
+		doTest(new Planner.Default(), Keyboard.Qwerty, "starwars");
 	}
 
 	@Test
-	public void testBatmanAzerty() {
-		doTest(new Planner.Default(), Keyboard.Azerty, "batman");
+	public void testLordOfTheRingsAzerty() {
+		doTest(new Planner.Default(), Keyboard.Azerty, "lordoftherings");
 	}
 
 	@Test
-	public void testBatmanQwertz() {
-		doTest(new Planner.Default(), Keyboard.Qwertz, "batman");
+	public void testLordOfTheRingsQwertz() {
+		doTest(new Planner.Default(), Keyboard.Qwertz, "lordoftherings");
 	}
 
 	@Test
