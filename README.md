@@ -31,4 +31,4 @@ Note that there are many, many paths the cursor could take between any two keys.
 ## Notes
 
 * Though it's not required, you'll find it helpful to run the tests with Maven.  Maven can be downloaded here https://maven.apache.org/download.cgi , though instructions for installing and running Maven are beyond the scope of this README.
-* To run the tests, from the directory you cloned or downloaded, run `mvn test`.
+* To run the tests, run `mvn test` from the directory you cloned or downloaded.
