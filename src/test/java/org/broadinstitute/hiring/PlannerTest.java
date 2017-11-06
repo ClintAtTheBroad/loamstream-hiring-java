@@ -62,7 +62,7 @@ public final class PlannerTest {
 	public void testCatQwerty() {
 		doTest(new Planner.Default(), Keyboard.Qwerty, "cat");
 	}
-	
+
 	private void doTest(final Planner planner, final Keyboard keyboard, final String desired) {
 		final List<Button> plan = planner.findButtonPresses(keyboard, desired);
 

@@ -83,7 +83,7 @@ public final class PositionTest {
 		assertEquals(p.left(), p.move(Left));
 		assertEquals(p.right(), p.move(Right));
 	}
-	
+
 	private <A> void intercept(final Supplier<A> pos) {
 		try {
 			pos.get();

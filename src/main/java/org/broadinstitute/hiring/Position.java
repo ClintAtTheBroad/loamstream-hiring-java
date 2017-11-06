@@ -1,8 +1,9 @@
 package org.broadinstitute.hiring;
 
 /**
- * A class representing a position on a virtual keyboard, described by a row and column index.
- * The constructor will throw if negative column or row indices are passed in.
+ * A class representing a position on a virtual keyboard, described by a row and
+ * column index. The constructor will throw if negative column or row indices
+ * are passed in.
  */
 public final class Position {
 	private final int row;
@@ -10,15 +11,15 @@ public final class Position {
 
 	public Position(final int row, final int column) {
 		super();
-		
-		if(row < 0) {
+
+		if (row < 0) {
 			throw new IllegalArgumentException("row must be >= 0, but was " + row);
 		}
-		
-		if(column < 0) {
+
+		if (column < 0) {
 			throw new IllegalArgumentException("column must be >= 0, but was " + column);
 		}
-		
+
 		this.row = row;
 		this.column = column;
 	}
@@ -26,7 +27,7 @@ public final class Position {
 	public static Position of(final int row, final int column) {
 		return new Position(row, column);
 	}
-	
+
 	public int getRow() {
 		return row;
 	}
@@ -34,37 +35,56 @@ public final class Position {
 	public int getColumn() {
 		return column;
 	}
-	
-	private Position withRow(final int row) { 
+
+	private Position withRow(final int row) {
 		return new Position(row, this.column);
 	}
-	
-	private Position withColumn(final int column) { 
+
+	private Position withColumn(final int column) {
 		return new Position(this.row, column);
 	}
-	
-	/** The Position obtained by moving up from this Position */ 
-	public Position up() { return withRow(row - 1); }
-	
-    /** The Position obtained by moving down from this Position */
-	public Position down() { return withRow(row + 1); }
-	
-	/** The Position obtained by moving left from this Position */
-	public Position left() { return withColumn(column - 1); }
-	
-	/** The Position obtained by moving right from this Position */
-	public Position right() { return withColumn(column + 1); }
 
-	/** The Position obtained by moving from this Position in the direction indicated by the passed button. */
+	/** The Position obtained by moving up from this Position */
+	public Position up() {
+		return withRow(row - 1);
+	}
+
+	/** The Position obtained by moving down from this Position */
+	public Position down() {
+		return withRow(row + 1);
+	}
+
+	/** The Position obtained by moving left from this Position */
+	public Position left() {
+		return withColumn(column - 1);
+	}
+
+	/** The Position obtained by moving right from this Position */
+	public Position right() {
+		return withColumn(column + 1);
+	}
+
+	/**
+	 * The Position obtained by moving from this Position in the direction
+	 * indicated by the passed button.
+	 */
 	public Position move(final Button button) {
-		if(button.isUp()) { return up(); }
-		if(button.isDown()) { return down(); }
-		if(button.isLeft()) { return left(); }
-		if(button.isRight()) { return right(); }
-		
+		if (button.isUp()) {
+			return up();
+		}
+		if (button.isDown()) {
+			return down();
+		}
+		if (button.isLeft()) {
+			return left();
+		}
+		if (button.isRight()) {
+			return right();
+		}
+
 		throw new IllegalArgumentException("Only directions are allowed, but got " + button);
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Position [row=" + row + ", column=" + column + "]";

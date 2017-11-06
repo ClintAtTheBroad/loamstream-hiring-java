@@ -16,16 +16,17 @@ public final class Keyboard {
 	}
 
 	/**
-     * The rows of keys on this keyboard.  For example, on a querty keyboard, the first row is
-     * q, w, e, r, t, y, u, i, o, p
-     */
+	 * The rows of keys on this keyboard. For example, on a querty keyboard, the
+	 * first row is q, w, e, r, t, y, u, i, o, p
+	 */
 	public List<CharSequence> getRows() {
 		return rows;
 	}
 
 	/**
-	 * Given a position (a row and column), return an Optional wrapping the character at that row and column on this
-	 * keyboard.  If the position is out-of-bounds, return Optional.empty().
+	 * Given a position (a row and column), return an Optional wrapping the
+	 * character at that row and column on this keyboard. If the position is
+	 * out-of-bounds, return Optional.empty().
 	 */
 	public final Optional<Character> charAt(final Position position) {
 		final int row = position.getRow();
@@ -37,38 +38,39 @@ public final class Keyboard {
 			return Optional.empty();
 		}
 	}
-	
+
 	/**
 	 * Widely used in North America
 	 */
 	public static final Keyboard Qwerty = new Keyboard(Arrays.asList(
-		"qwertyuiop",
-		"asdfghjkl",
-		"zxcvbnm"));
-	  
+			"qwertyuiop", 
+			"asdfghjkl", 
+			"zxcvbnm"));
+
 	/**
 	 * Most common in France
 	 */
 	public static final Keyboard Azerty = new Keyboard(Arrays.asList(
-		"azertyuiop",
-		"qsdfghjklm",
-		"wxcvbn"));
+			"azertyuiop", 
+			"qsdfghjklm", 
+			"wxcvbn"));
 
-    /**
+	/**
 	 * Widely used in German-speaking countries
 	 */
 	public static final Keyboard Qwertz = new Keyboard(Arrays.asList(
-		"qwertzuiopü",
-		"asdfghjklöä",
-		"yxcvbnm"));
-	  
-    /**
-	 * Arranges letters in rows of 8 or 9 letters, starting with 'a' and proceeding in (English) alphabetical order.
+			"qwertzuiopü", 
+			"asdfghjklöä", 
+			"yxcvbnm"));
+
+	/**
+	 * Arranges letters in rows of 8 or 9 letters, starting with 'a' and
+	 * proceeding in (English) alphabetical order.
 	 */
 	public static final Keyboard Alphabetical = new Keyboard(Arrays.asList(
-		"abcdefghi",
-		"jklmnopqr",
-		"stuvwxyz"));
+			"abcdefghi", 
+			"jklmnopqr", 
+			"stuvwxyz"));
 
 	private Boolean isValidRow(final int row) {
 		return row >= 0 && row < rows.size();

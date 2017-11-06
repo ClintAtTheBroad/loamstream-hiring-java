@@ -15,9 +15,9 @@ public final class PlanFollowerTest {
 	public void testCanFollowButtonPressPlans() {
 		final List<Button> plan = Arrays.asList(
 				Down, Down, Right, Right, Select, 
-			    Up, Left, Left, Select,
-			    Right, Right, Right, Right, Up, Select);
-			    
-	    assertEquals("cat", PlanFollower.follow(Qwerty, plan));
+				Up, Left, Left, Select, 
+				Right, Right, Right, Right, Up, Select);
+
+		assertEquals("cat", PlanFollower.follow(Qwerty, plan));
 	}
 }
